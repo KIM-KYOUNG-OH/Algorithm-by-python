@@ -1,16 +1,27 @@
-n,m=map(int,input().split(' '))
-a_list,b_list=list(), list()
-for i in range(m):
-    a,b=map(int, input().split(' '))
-    a_list.append(a)
-    b_list.append(b)
+import heapq
 
-numbers = [i for i in range(n)]
-while b_list:
-    i=b_list[0]
-    numbers.remove(a_list[0])
-    numbers.insert(i-1,a_list[0])
-    a_list.pop[0]
-    b_list.pop[0]
-for i in numbers:
-    print(i, end=" ")
+n,m = map(int, input().split())
+array=[[] for i in range(n+1)]
+indegree=[0 for i in range(n+1)]
+
+heap=[]
+result=[]
+
+for _ in range(m):
+    x,y=map(int, input().split())
+    array[x].append(y)
+    indegree[y]+=1
+
+for i in range(1,n+1):
+    if indegree[i]==0:
+        heapq.heappush(heap,i)
+
+while heap:
+    data = heapq.heappop(heap)
+    result.append(data)
+    for y in array[data]:
+        indegree[y] -= 1
+        if indegree[y] == 0:
+            heapq.heappush(heap, y)
+for i in result:
+    print(i, end=' ')
