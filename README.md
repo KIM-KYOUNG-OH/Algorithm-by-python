@@ -35,7 +35,35 @@
     4) set
         - set()
         - 시간복잡도가 크다
-18. iterable 객체란 반복 가능한 객체
+18. iterable 객체란 반복 가능한 객체 immutable객체란 불변객체
 19. enumerate() : for반복문에서 range자리에 쓰임, list자료형의 index와 value값을 튜플형태로 반환
 20. 함수를 정의할때 매개변수,리턴값을 먼저 적기
 21. 이분탐색
+22. 리스트의 element들이 모두 같은지 확인하는 방법: len(set)을 사용
+23. if 0 : false, if 1 : true
+24. set은 element의 중복된 횟수를 체크할때 사용할 수 있다
+25. index(), find()
+26. split()은 리스트값을 반환한다
+27. list comprehension은 괄호로 필히 감싸줘야한다
+28. 모듈(deque, heapq, bisect, math)
+29. 문자열 거꾸로 출력하기 s[::-1]
+30. 동서남북 방향벡터 dx, dy = [0,1,0,-1], [1,0,-1,0]
+31. 문자열을 list()로 감싸면 char단위로 나눔(split('') : 작동안됨)
+32. 대부분의 코딩테스트는 BFS/DFS+재귀만 잘해도 풀 수 있다
+33. 탐색문제) BFS: Queue, DFS: Stack(재귀함수)
+34. 대표적인 탐색문제: 
+        - 부분상태탐색(위치 이동, 수)
+        - 전체상태탐색(전체map)
+    1) 구현
+        - Flood Fill
+        - 트리 순회
+    2) 알고리즘 지식
+        - 위상정렬(Topological Sort)
+        - 최소신장트리(MST)
+        - 최단 거리
+35. 'type' object is not subscriptable 오류 :
+해당 변수의 타입선언을 제대로해줘야함
+36. DFS
+- 재귀함수, stack을 이용
+37. BFS
+- dequeue 이용
