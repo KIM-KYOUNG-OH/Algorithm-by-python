@@ -1,13 +1,20 @@
-def factorial_iterative(n):
-    result = 1
-    for i in range(1, n+1):
-        result *= i
-    return result
+from collections import Counter
 
-def factorial_recursive(n):
-    if n <= 1:
-        return 1
-    return n*factorial_recursive(n-1)
+def often(lst):
+    cnt = Counter(lst)
+    cnt_lst = cnt.most_common()
+    print(cnt_lst)
+    if len(cnt_lst)>1:
+        if cnt_lst[0][1] == cnt_lst[1][1]:
+            return cnt_lst[1][0]
+        else:
+            return cnt_lst[0][0]
+    else:
+        return cnt_lst[0][0]
 
-print('반복적으로 구현:', factorial_iterative(5))
-print('재귀적 구현:', factorial_recursive(5))
+
+n = int(input())
+lst = [int(input()) for _ in range(n)]
+lst.sort()
+print(often(lst))
+
