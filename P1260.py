@@ -29,6 +29,7 @@ for _ in range(m):
 for e in adj:
     e.sort()
 
+print(adj)
 visited = [False] * (n+1)
 dfs(v)
 print()
