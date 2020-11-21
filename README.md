@@ -70,3 +70,4 @@
 38. Count (builtin class) .most_common() : 해당리스트에 element를 자주 빈출된 순서의 2차원 배열로 반환 
 39. lambda로 처리식의 priority를 지정
 40. sys.stdin.readline()이 input()보다 빠르다
+41. 파일명에 괄호"(",")"가 포함되면 에러남
