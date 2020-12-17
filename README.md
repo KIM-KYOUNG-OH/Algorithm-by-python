@@ -17,7 +17,7 @@
     2) 탐색: BFS/DFS, 완전탐색(백트래킹)
     3) 구조: 큐, 스택, 힙
     4) 알고리즘: greedy, DP, 이분탐색...
-15. chr(), ord()
+15. chr(): 아스키코드번호 to 문자, ord(): 문자 to 아스키코드번호 
 16. shortcircuit
 17. container 자료구조 : list, dictionary, set, tuple
     1) list
