@@ -1,4 +1,1 @@
-a = [0,1,2]
-
-print(a[:9999])
-# [0, 1, 2]
+print(list("java backend junior pizza 150".split()))
