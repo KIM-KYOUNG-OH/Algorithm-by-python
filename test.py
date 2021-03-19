@@ -1,1 +1,0 @@
-print(list("java backend junior pizza 150".split()))
