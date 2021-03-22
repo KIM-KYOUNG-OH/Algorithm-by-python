@@ -11,5 +11,3 @@ def solution(dirs):
             current_posx, current_posy = after_posx, after_posy
 
     return len(path_set) // 2
-
-print(solution("ULURRDLLU"))
