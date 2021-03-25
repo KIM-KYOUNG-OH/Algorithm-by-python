@@ -11,5 +11,3 @@ def solution(skill, skill_trees):
                     break
 
     return count
-
-print(solution("CBD",["BACDE", "CBADF", "AECB", "BDA"]))
