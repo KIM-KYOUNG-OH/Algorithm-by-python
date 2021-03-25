@@ -12,5 +12,3 @@ def solution(arr):
             i += 1
 
     return arr[0]
-
-print(solution([2,6,8,14]))
