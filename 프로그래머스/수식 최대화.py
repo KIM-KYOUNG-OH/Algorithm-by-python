@@ -17,5 +17,3 @@ def solution(expression):
         answer = max(answer, abs(int(calc(p, 0, expression))))
 
     return answer
-
-print(solution("100-200*300-500+20"))
