@@ -1,9 +1,10 @@
-def process(N):
-    if N==0:
-        return 0
-    elif N==1:
-        return 1
-    return process(N-2) + process(N-1)
+n = int(input())
 
-N = int(input())
-print(process(N))
+def fibo(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    return fibo(n-1) + fibo(n-2)
+
+print(fibo(n))
