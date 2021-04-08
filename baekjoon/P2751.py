@@ -1,7 +1,7 @@
 n = int(input())
-array=list()
+lst = []
 for _ in range(n):
-    array.append(int(input()))
-result=sorted(array, reverse=False)
-for data in result:
-    print(data)
+    lst.append(int(input()))
+lst.sort(reverse=True)
+for _ in range(n):
+    print(lst.pop())

@@ -1,27 +1,25 @@
-def bfs(lst, start):
-    result = []
-    visit = []
-    queue = []
-    visit = [False]*len(lst)
-    visit[start] = True
-    queue.append(start)
-    while len(queue)>0:
-        i = queue.pop(0)
-        result.append(i)
-        for j in lst[i]:
-            if visit[j] == False:
-                queue.append(j)
-                visit[j]=True
-    return result
+from collections import deque
 
-node=int(input())
-edge=int(input())
-lst = [[] for i in range(node+1)]
-for i in range(edge):
+def bfs(v):
+    global ans
+    q = deque([v])
+    visited[v] = True
+    while q:
+        a = q.popleft()
+        for i in range(1, n+1):
+            if graph[a][i] and not visited[i]:
+                ans += 1
+                q.append(i)
+                visited[i] = True
+
+n = int(input())
+graph = [[0 for _ in range(n+1)] for _ in range(n+1)]
+visited = [False]*(n+1)
+ans = 0
+m = int(input())
+for _ in range(m):
     a,b = map(int, input().split())
-    lst[a].append(b)
-    lst[b].append(a)
-for i in lst:
-    i.sort()
-answer = bfs(lst,1)
-print(len(answer)-1)
+    graph[a][b] = 1
+    graph[b][a] = 1
+bfs(1)
+print(ans)
