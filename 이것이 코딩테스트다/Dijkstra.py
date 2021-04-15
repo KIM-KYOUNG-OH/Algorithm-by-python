@@ -14,6 +14,7 @@ def dijkstra(start):
         dist, now = heapq.heappop(q)
         # 현재 노드가 이미 처리된 적이 있는 노드라면 무시
         if distance[now] < dist:
+            print(now, dist)
             continue
         # 현재 노드와 연결된 다른 인접한 노드들을 확인
         for i in graph[now]:
