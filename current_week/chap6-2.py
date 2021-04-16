@@ -1,0 +1,6 @@
+n = int(input())
+lst = []
+for _ in range(n):
+    lst.append(int(input()))
+lst.sort(reverse=True)
+print(" ".join(map(str, lst)))
