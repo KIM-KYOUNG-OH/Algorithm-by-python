@@ -1,6 +1,13 @@
-n, m, k = map(int, input().split())
-lst = list(map(int, list(input().split())))
-lst.sort()
-a = lst[len(lst)-1]
-b = lst[len(lst)-2]
-print((b+k*a)*(m//(k+1)) + a*(m%(k+1)))
+n,m,k = map(int, input().split())
+arr = list(map(int, input().split()))
+arr.sort()
+ans = 0
+cnt = 0
+for _ in range(m):
+    if cnt >= k:
+        ans += arr[-2]
+        cnt = 0
+    else:
+        ans += arr[-1]
+        cnt += 1
+print(ans)
