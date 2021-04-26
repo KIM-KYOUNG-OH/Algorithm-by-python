@@ -1,20 +1,14 @@
-ans = []
-n = int(input())
-
-def dfs():
-    if len(beams[0]) == 0 and len(beams[1]) == 0:
-        return
-    dfs()
-    for i in range(3):
-        if len(beams[i])!=0:
-            for j in range(3):
-                if i!=j and beams[i][-1] > beams[j][-1]:
-                    beams[j].append(beams[i].pop())
-                    ans.append((i,j))
+def hanoi(n, a, b, c):
+    if n == 1:
+        move.append((a, c))
+    else:
+        hanoi(n-1, a, c, b)
+        move.append((a, c))
+        hanoi(n-1, b, a, c)
 
 
-beams = [[i for i in range(1, n+1, -1)], [], []]
-dfs()
-print(len(ans))
-for i in ans:
-    print(' '.join(map(str, i)))
+move = []
+hanoi(int(input()), 1, 2, 3)
+print(len(move))
+for i in move:
+    print(i[0], i[1])
