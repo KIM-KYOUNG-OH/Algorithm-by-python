@@ -17,10 +17,8 @@ while q:
     if depth == 2:
         break
     for i in graph[node]:
-        temp = depth
         if not visited[i]:
-            temp += 1
             answer.add(i)
             visited[i] = True
-            q.append((temp, i))
+            q.append((depth+1, i))
 print(len(answer))
