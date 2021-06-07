@@ -10,19 +10,19 @@ def check_color(y, x, length):
     return True
 
 
-def solution(y, x, depth):
+def solution(y, x, length):
     global white, blue
-    col = matrix[y][x]
-    if check_color(y, x, depth):
-        if col == 0:
+    color = matrix[y][x]
+    if check_color(y, x, length):
+        if color == 0:
             white += 1
-        elif col == 1:
+        elif color == 1:
             blue += 1
         return
-    solution(y, x, depth // 2)
-    solution(y + depth // 2, x, depth // 2)
-    solution(y, x + depth // 2, depth // 2)
-    solution(y + depth // 2, x + depth // 2, depth // 2)
+    solution(y, x, length // 2)
+    solution(y + length // 2, x, length // 2)
+    solution(y, x + length // 2, length // 2)
+    solution(y + length // 2, x + length // 2, length // 2)
 
 
 n = int(sys.stdin.readline().rstrip())

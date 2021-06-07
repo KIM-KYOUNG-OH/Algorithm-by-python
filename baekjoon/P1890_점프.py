@@ -16,4 +16,4 @@ for y in range(n):
             dp[yy][x] += dp[y][x]
         if 0 <= xx < n:
             dp[y][xx] += dp[y][x]
-print(dp[n-1][n-1])
+print(dp[n - 1][n - 1])
