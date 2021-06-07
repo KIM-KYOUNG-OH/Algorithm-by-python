@@ -2,10 +2,10 @@ import sys
 from itertools import combinations
 
 
-def GCD(A, B):
+def GCD(A: int, B: int) -> int:
     if B == 0:
         return A
-    GCD(B, A % B)
+    return GCD(B, A % B)
 
 
 t = int(sys.stdin.readline().rstrip())
@@ -14,13 +14,13 @@ for _ in range(t):
     n = lst[0]
     numbers = lst[1:]
     if n == 1:
-        print(numbers[0])
         continue
-    candidates = combinations(numbers, 2)
+    candidates = list(combinations(numbers, 2))
     result = 0
     for candidate in candidates:
         a, b = candidate
         if b > a:
             a, b = b, a
-        result += GCD(a, b)
+        temp = GCD(a, b)
+        result += temp
     print(result)
