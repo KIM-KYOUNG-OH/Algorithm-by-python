@@ -21,6 +21,5 @@ for _ in range(t):
         a, b = candidate
         if b > a:
             a, b = b, a
-        temp = GCD(a, b)
-        result += temp
+        result += GCD(a, b)
     print(result)
