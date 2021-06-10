@@ -2,7 +2,7 @@ import sys
 
 
 def binary_search(left, right):
-    result = 0  # 최대 예산 합
+    result = 0  # 총 예산 합
     limit = 0  # 최대 상한액
     while left <= right:
         mid = (left + right) // 2
