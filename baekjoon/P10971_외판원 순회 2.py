@@ -1,16 +1,16 @@
 import sys
 
 
-def dfs(start, next, value, visited):
+def dfs(start, current, value, visited):
     global min_value
     if len(visited) == n:
-        if matrix[next][start] != 0:
-            min_value = min(min_value, value + matrix[next][start])
+        if matrix[current][start] != 0:
+            min_value = min(min_value, value + matrix[current][start])
         return
     for i in range(n):
-        if matrix[next][i] != 0 and i not in visited:
+        if matrix[current][i] != 0 and i not in visited:
             visited.append(i)
-            dfs(start, i, value + matrix[next][i], visited)
+            dfs(start, i, value + matrix[current][i], visited)
             visited.pop()
 
 

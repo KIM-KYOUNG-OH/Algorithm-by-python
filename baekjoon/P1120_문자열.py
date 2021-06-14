@@ -12,6 +12,7 @@
 #             cnt += 1
 #     answer = min(answer, cnt)
 # print(answer)
+
 import sys
 
 A, B = sys.stdin.readline().rstrip().split()
