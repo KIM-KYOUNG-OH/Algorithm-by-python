@@ -8,13 +8,13 @@ def convert_matrix(r, c, matrix):
 
 
 n, m = map(int, sys.stdin.readline().rstrip().split())
-standard_matrix = []
-change_matrix = []
+standard_matrix = []  # 기준 행렬
+change_matrix = []  # 수정할 행렬
 for _ in range(n):
     standard_matrix.append(list(map(int, list(sys.stdin.readline().rstrip()))))
 for _ in range(n):
     change_matrix.append(list(map(int, list(sys.stdin.readline().rstrip()))))
-convert_cnt = 0
+convert_cnt = 0  # 뒤집는 횟수
 
 for i in range(n - 2):
     for j in range(m - 2):
