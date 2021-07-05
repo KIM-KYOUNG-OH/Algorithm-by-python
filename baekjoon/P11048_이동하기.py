@@ -27,14 +27,14 @@
 import sys
 
 n, m = map(int, sys.stdin.readline().rstrip().split())
-matrix = [[0] * (m + 1) for _ in range(n + 1)]
+matrix = [[0] * (m + 1) for _ in range(n + 1)]  # matrix 선언
 for i in range(1, n + 1):
     lst = list(map(int, sys.stdin.readline().rstrip().split()))
     for j in range(len(lst)):
-        matrix[i][j + 1] = lst[j]
-dp = [[0] * (m + 1) for _ in range(n + 1)]
+        matrix[i][j + 1] = lst[j]  # matrix 입력 받기
+dp = [[0] * (m + 1) for _ in range(n + 1)]  # dp 테이블 초기화
 
 for i in range(n + 1):
     for j in range(m + 1):
-        dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]) + matrix[i][j]
+        dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]) + matrix[i][j]  # 점화식
 print(dp[-1][-1])
