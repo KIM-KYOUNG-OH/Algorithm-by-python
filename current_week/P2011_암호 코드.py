@@ -16,4 +16,4 @@ for i in range(2, length + 1):
     if 10 <= cur2 <= 26:
         dp[i] += dp[i - 2]
     dp[i] %= 1000000
-print(dp[1])
+print(dp[-1])
