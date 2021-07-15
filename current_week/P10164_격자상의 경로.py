@@ -11,8 +11,8 @@ for i in range(1, n + 1):
 if k == 0:
     print(dp[n][m])
     exit(0)
-k_r = k // n
-k_c = m - k % n
+k_r = (k - 1) // m + 1
+k_c = k % m
 left_rec_height = k_r
 left_rec_width = k_c
 right_rec_height = n - k_r + 1
