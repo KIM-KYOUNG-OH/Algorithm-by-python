@@ -2,10 +2,10 @@ import sys
 
 
 def is_movable(stores, x, y):
-    if len(stores) == 0:
-        return False
     if (end_x - x) + (end_y - y) <= 1000:
         return True
+    if len(stores) == 0:
+        return False
     store_x, store_y = stores.pop()
     diff_x = store_x - x
     diff_y = store_y - y
