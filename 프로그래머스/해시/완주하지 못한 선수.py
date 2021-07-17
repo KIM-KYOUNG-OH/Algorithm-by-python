@@ -5,7 +5,6 @@
 #         if completion[i] != participant[i]: # 순서가 다른 순간 i번째가 답
 #             return participant[i]
 #     return participant[-1] # 전부 일치하면 마지막에 남은애가 답
-#
 
 
 def solution(participant, completion):
@@ -22,7 +21,9 @@ def solution(participant, completion):
             answer = select
             break
         completion_dic[select] -= 1
-    return answer
+        if completion_dic[select] == 0:
+            del completion_dic[select]
+    return answer  
 
 
 print(solution(["leo", "kiki", "eden"], ["eden", "kiki"]))
