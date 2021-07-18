@@ -10,15 +10,11 @@
 #     return True
 
 def solution(phone_book):
-    answer = True
-    phone_book.sort(key=lambda x: len(x))
-    for i in range(0, len(phone_book) - 1):
-        for j in range(i + 1, len(phone_book)):
-            for k in range(len(phone_book[i])):
-                if phone_book[i][k] != phone_book[j][k]:
-                    break
-                
-    return answer
+    phone_book.sort()  # 문자열 배열의 sort()는 아스키 코드표순 정렬
+    for i in range(len(phone_book) - 1):  # sort()했기 때문에 접두어 관계끼리는 붙어있다.
+        if phone_book[i] == phone_book[i + 1][:len(phone_book[i])]:
+            return False
+    return True
 
 print(solution(["119", "97674223", "1195524421"]))
 
