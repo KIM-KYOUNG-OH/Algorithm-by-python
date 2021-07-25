@@ -11,9 +11,6 @@
 #                 answer[i] +=1
 #     return answer
 
-from collections import deque
-
-
 def solution(prices):
     answer = [0] * len(prices)  # 가격이 떨어지지 않은 연속 횟수 전부 0으로 초기화
     for i in range(len(prices) - 1):  # 마지막은 항상 0이므로 len(prices) - 1 번까지 순회
