@@ -21,7 +21,17 @@
 #     return int(answer/len(jobs))
 def solution(jobs):
     answer = 0
-
+    jobs_sorted = sorted(jobs, key=lambda x: x[1])  # stack, 작업 소요 시간 기준 내림차순 정렬
+    time = 0  # 현재 시간
+    while jobs_sorted:
+        job = jobs_sorted.pop()
+        if time <= job[0]:
+            answer += time + job[1]
+            time = job[0] + job[1]
+            continue
+        if time > job[0]:
+            answer += job[1]
+            time = (job[0] + time)
 
     return answer
 
