@@ -1,20 +1,29 @@
+from collections import deque
+
+
 def solution(ingredient):
-    i = 0
-    seq = [1, 2, 3, 1]
-    l = len(ingredient)
-    cnt = 0
-    while True:
-        if i > l - 4:
-            break
-        isSame = True
-        for j in range(i, i + 4):
-            if seq[j - i] != ingredient[j]:
-                i += 1
-                isSame = False
-                break
+    stack = deque([])
+    answer = 0
+    for i in ingredient:
+        stack.append(i)
+        if i == 1:
+            if len(stack) >= 4 and isHamburger(stack):
+                for _ in range(4):
+                    stack.pop()
+                answer += 1
 
-        if isSame:
-            ingredient = ingredient[0: i] + ingredient[i + 4:]
-            cnt += 1
+    return answer
 
-    return cnt
+
+def isHamburger(stack):
+    l = len(stack)
+    hamburger = [1, 3, 2, 1]
+    temp = []
+    for i in range(l - 1, l - 5, -1):
+        temp.append(stack[i])
+    if temp == hamburger:
+        return True
+    return False
+
+
+solution([2, 1, 1, 2, 3, 1, 2, 3, 1])
