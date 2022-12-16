@@ -1,14 +1,11 @@
 def solution(info, edges):
     def dfs(sheep, wolf):
-        print('sheep = ', sheep, ', wolf = ', wolf)
         if sheep > wolf:
             answer.append(sheep)
-            print('answer = ', answer)
         else:
             return
-        for edge in edges:
-            parent = edge[0]
-            cur = edge[1]
+
+        for parent, cur in edges:
             isWolf = info[cur]
             if visited[parent] and not visited[cur]:
                 visited[cur] = True
