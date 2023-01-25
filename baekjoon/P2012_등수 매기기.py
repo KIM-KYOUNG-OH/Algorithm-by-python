@@ -2,28 +2,20 @@ import heapq
 import sys
 
 n = int(sys.stdin.readline().rstrip())
-ranks = []
+visit = [False] * 500001
+pq = []
 for _ in range(n):
-    tmp = int(sys.stdin.readline().rstrip())
-    heapq.heappush(ranks, tmp)
-
-costs = [-1] * (n + 1)
-rest = []
-while ranks:
-    cur = heapq.heappop(ranks)
-    if costs[cur] == -1:
-        costs[cur] = 0
+    num = int(sys.stdin.readline().rstrip())
+    if not visit[num] and num <= n:
+        visit[num] = True
     else:
-        heapq.heappush(rest, cur)
+        heapq.heappush(pq, num)
 
-idx = 1
 answer = 0
-while rest:
-    cur = heapq.heappop(rest)
-    while True:
-        if idx > n:
-            break
-        elif costs[idx] == -1:
-            answer += abs(cur - idx)
-            break
+for i in range(1, n + 1):
+    if visit[i]:
+        continue
+
+    cur = heapq.heappop(pq)
+    answer += abs(i - cur)
 print(answer)
