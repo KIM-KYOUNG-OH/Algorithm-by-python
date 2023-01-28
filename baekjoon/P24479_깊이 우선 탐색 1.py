@@ -1,5 +1,6 @@
 import sys
 from collections import deque, defaultdict
+sys.setrecursionlimit(10**9)
 
 
 def dfs(n, cur):
@@ -9,7 +10,6 @@ def dfs(n, cur):
         if not visit[node]:
             visit[node] = True
             dfs(n, node)
-    return
 
 
 n, m, r = map(int, sys.stdin.readline().rstrip().split())
@@ -19,7 +19,10 @@ for _ in range(m):
     graph[u].append(v)
     graph[v].append(u)
 for i in range(1, n + 1):
-    graph[i].sort()
+    graph[i] = sorted(graph[i])
+
+# for i in range(1, n + 1):
+#     print(graph[i])
 
 path = deque()
 visit = [False] * (n + 1)
