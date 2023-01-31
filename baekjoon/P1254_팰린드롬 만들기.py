@@ -3,17 +3,20 @@ import sys
 s = sys.stdin.readline().rstrip()
 l = len(s)
 answer = 0
-for i in range(l + 1, l * 2):
-    left, right = [], []
+for i in range(l, l * 2):
+    # print('i = ', i)
+    mid = i // 2
+    left = list(s[:mid])
+    right = []
     if i % 2 == 0:
-        left = list(s[:i])
-        right = s[i:]
+        right = list(s[mid:])
     else:
-        left = list(s[:i])
-        right = s[i + 1:]
+        right = list(s[mid + 1:])
 
+    # print('left = ', left)
+    # print('right = ', right)
     isPossible = True
-    for e in right[::-1]:
+    for e in right:
         cur = left.pop()
         if cur != e:
             isPossible = False
