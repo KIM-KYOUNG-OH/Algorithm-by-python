@@ -4,19 +4,22 @@ class Trie:
         self.components = list()
 
     def insert(self, word: str) -> None:
-        self.components.append(str)
+        self.components.append(word)
 
     def search(self, word: str) -> bool:
-        return self.components.find(word)
+        for e in self.components:
+            if e == word:
+                return True
+        return False
 
     def startsWith(self, prefix: str) -> bool:
         for e in self.components:
-            if e.startWith(prefix):
+            if e.startswith(prefix):
                 return True
         return False
 
 # Your Trie object will be instantiated and called as such:
-# obj = Trie()
-# obj.insert(word)
-# param_2 = obj.search(word)
-# param_3 = obj.startsWith(prefix)
+obj = Trie()
+obj.insert('apple')
+param_2 = obj.search('apple')
+param_3 = obj.startsWith('app')
